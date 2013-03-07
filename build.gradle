@@ -1,0 +1,27 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+version = '1.0'
+
+repositories { mavenCentral() }
+
+dependencies {
+	compile('org.springframework:spring-core:3.2.0.RELEASE')
+	compile('org.springframework:spring-aop:3.2.0.RELEASE')
+	compile('org.springframework:spring-context:3.2.0.RELEASE')
+	compile('org.springframework.integration:spring-integration-core:2.2.0.RELEASE')
+	compile('org.springframework.integration:spring-integration-file:2.2.0.RELEASE')
+	compile('org.springframework.integration:spring-integration-stream:2.2.0.RELEASE')
+	compile('org.springframework.integration:spring-integration-xml:2.2.0.RELEASE')
+	compile('log4j:log4j:1.2.14')
+	compile('org.codehaus.jackson:jackson-mapper-asl:1.9.8')
+
+}
+
+task wrapper(type: Wrapper) {
+	description = 'Generates gradlew[.bat] scripts'
+	gradleVersion = '1.3'
+}
